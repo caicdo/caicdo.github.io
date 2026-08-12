@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Open Source — Caicedo</title>
+<meta name="description" content="Standalone TypeScript/Rojo systems extracted from production Roblox games, open-sourced on GitHub." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="topbar-wrap">
+<div class="topbar">
+	<a href="index.html" class="topbar-home">
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+			<path d="M3 11l9-8 9 8"></path>
+			<path d="M5 10v10h14V10"></path>
+		</svg>
+		<span>Home</span>
+	</a>
+	<a href="index.html" class="topbar-brand">
+		<span class="topbar-logo" aria-hidden="true">C</span>
+		<span class="topbar-name">Caicedo</span>
+	</a>
+	<button class="discord-btn" data-discord="@caicedo" type="button">
+		<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+			<path d="M20 5.5c-1.4-.7-2.9-1.1-4.5-1.4l-.2.4c1.4.4 2.7 1 3.9 1.8-3.9-1.9-9.5-1.9-13.4 0 1.2-.8 2.5-1.4 3.9-1.8l-.2-.4C7.9 4.4 6.4 4.8 5 5.5 2.5 9.3 1.8 13 2.1 16.6c1.7 1.3 3.4 2 5 2.5l.6-1c-.9-.3-1.8-.8-2.6-1.3.2-.2.4-.3.7-.5 3.5 1.6 7.3 1.6 10.8 0 .2.2.4.3.7.5-.8.5-1.7 1-2.6 1.3l.6 1c1.6-.5 3.3-1.2 5-2.5.4-4.2-.6-7.9-2.3-11.1zM9 14.2c-.9 0-1.6-.9-1.6-1.9 0-1.1.7-1.9 1.6-1.9s1.6.9 1.6 1.9c0 1-.7 1.9-1.6 1.9zm6 0c-.9 0-1.6-.9-1.6-1.9 0-1.1.7-1.9 1.6-1.9s1.6.9 1.6 1.9c0 1-.7 1.9-1.6 1.9z" />
+		</svg>
+		<span>Contact</span>
+		<span class="toast" role="status"></span>
+	</button>
+</div>
+</header>
+
+<main>
+	<h1 class="page-title">Open Source</h1>
+	<p class="page-intro">
+		Two systems pulled out of a production RP game and rebuilt as standalone, dependency-free
+		libraries — written in <a href="https://roblox-ts.com/" target="_blank" rel="noopener">roblox-ts</a>,
+		synced with <a href="https://rojo.space/" target="_blank" rel="noopener">Rojo</a>. MIT licensed, free to drop into any project.
+	</p>
+
+	<article class="project-card">
+		<div class="project-body">
+			<div class="project-head">
+				<h2>JobEngine</h2>
+				<div class="project-tags">
+					<span class="tag">TypeScript</span>
+					<span class="tag">roblox-ts</span>
+					<span class="tag">Rojo</span>
+					<span class="tag">MIT</span>
+				</div>
+			</div>
+			<p class="project-desc">
+				A reusable "shift-based job" engine for RP / life-sim games. Handles the part that's the same
+				in every one of these games — starting and ending a shift, passive income on a timer, AFK
+				detection, time-based boost tiers, gamepass-gated jobs — so only the job-specific logic has to
+				be written per game.
+			</p>
+			<ul>
+				<li>Passive income loop with AFK detection, warning, and auto-end</li>
+				<li>Time-based boost tiers applied to payout at shift end</li>
+				<li>Per-job <code>Behavior</code> plugin interface, loaded dynamically by job ID</li>
+				<li><code>Signal</code>-based events for quests, XP, and analytics to subscribe to</li>
+				<li>Every integration point (payout, validation, tutorial gating) injected through one options object</li>
+			</ul>
+			<div class="code-preview">
+<pre>const engine = new JobEngine({
+	Jobs,
+	Payout: (player, amount) => { ... },
+	BehaviorsFolder: script.Parent.Behaviors,
+});
+
+engine.ShiftStarted.Connect((player, jobId) => {
+	QuestSystem.AddValue(player, "Jobs started", 1);
+});</pre>
+			</div>
+			<a class="btn btn-accent" href="https://github.com/caicdo/job-engine" target="_blank" rel="noopener">View on GitHub →</a>
+		</div>
+	</article>
+
+	<article class="project-card">
+		<div class="project-body">
+			<div class="project-head">
+				<h2>UITransitions</h2>
+				<div class="project-tags">
+					<span class="tag">TypeScript</span>
+					<span class="tag">roblox-ts</span>
+					<span class="tag">Rojo</span>
+					<span class="tag">MIT</span>
+				</div>
+			</div>
+			<p class="project-desc">
+				A lightweight menu/GUI transition engine for Roblox. Handles the part of a UI shell that's
+				almost always hand-rolled — sliding screens in and out, hiding the HUD while a menu is open,
+				hover-scale button feedback, and an "unseen content" notification dot that clears itself once
+				the player actually looks at what it's pointing to.
+			</p>
+			<ul>
+				<li>Slide-in/slide-out transitions driven entirely by <code>TweenService</code></li>
+				<li>Automatic opener-button ↔ ScreenGui wiring by name</li>
+				<li>HUD hide/restore while a designated menu is open</li>
+				<li>Notification-dot system that dismisses itself when its target scrolls into view</li>
+				<li>One extension point (<code>RegisterExternalEvent</code>) for all game-specific side effects</li>
+			</ul>
+			<div class="code-preview">
+<pre>UITransitions.Initialize(hud, hudButtons, {
+	Inventory: { HideHUD: false },
+	Settings: { HideHUD: true },
+});
+
+UITransitions.RegisterExternalEvent("Settings", (opening) => {
+	pauseGameplayInput(opening);
+});</pre>
+			</div>
+			<a class="btn btn-accent" href="https://github.com/caicdo/ui-transitions" target="_blank" rel="noopener">View on GitHub →</a>
+		</div>
+	</article>
+
+	<section class="now-look">
+		<p>Now look:</p>
+		<div class="btn-row">
+			<a class="btn btn-accent" href="past-work.html">Past Work</a>
+			<a class="btn btn-accent" href="skills.html">My Skills</a>
+		</div>
+	</section>
+</main>
+
+<footer class="site-footer">
+	<p>Discord: @caicedo · Roblox: caicd — anyone else claiming to be me is not affiliated.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
