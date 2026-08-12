@@ -778,6 +778,8 @@ footer.site-footer {
 	.video-frame,
 	.project-media {
 		flex-basis: auto;
+		width: 100%;
+		align-self: auto;
 	}
 
 	.skill-grid,
