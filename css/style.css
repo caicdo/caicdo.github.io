@@ -1,5 +1,4 @@
 :root {
-	/* Acid-green-on-black identity — deep black base, one loud lime accent. */
 	--bg: #050603;
 	--bg-alt: #0d100a;
 	--bg-alt-2: #151a0f;
@@ -20,7 +19,6 @@
 
 body {
 	margin: 0;
-	/* Lowkey ambient glow — a dark green fading into the black, not the bright accent. */
 	background: radial-gradient(ellipse 1400px 700px at 50% -5%, rgba(16, 36, 10, 0.6), transparent 65%), var(--bg);
 	background-attachment: fixed;
 	color: var(--text);
@@ -41,8 +39,6 @@ svg {
 button {
 	font-family: inherit;
 }
-
-/* ---------- Header (sticky — stays visible while scrolling) ---------- */
 
 .topbar-wrap {
 	position: sticky;
@@ -173,8 +169,6 @@ main {
 	padding: 1.5rem 1.5rem 5rem;
 }
 
-/* ---------- Hero ---------- */
-
 .hero-title {
 	text-align: center;
 	font-size: clamp(1.8rem, 4.5vw, 3rem);
@@ -197,8 +191,6 @@ main {
 	max-width: 640px;
 	margin: 0 auto 3rem;
 }
-
-/* ---------- Stat row (no cards — icon/number/subtitle sit directly on the bg) ---------- */
 
 .stats-row {
 	display: flex;
@@ -249,8 +241,6 @@ main {
 	font-size: clamp(0.75rem, 2vw, 0.95rem);
 }
 
-/* ---------- Bento nav grid ---------- */
-
 .bento {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -288,8 +278,6 @@ main {
 	transform: translateY(-2px);
 }
 
-/* Large decorative glyph, layered low-opacity behind the title — stands in for
-   real artwork until photos/GIFs are added. */
 .bento-icon {
 	position: absolute;
 	right: -1.25rem;
@@ -345,8 +333,6 @@ main {
 	line-height: 1.15;
 }
 
-/* ---------- Buttons ---------- */
-
 .btn-row {
 	display: flex;
 	justify-content: center;
@@ -385,8 +371,6 @@ main {
 	filter: brightness(0.88);
 	box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.35);
 }
-
-/* ---------- Disclaimer banner (past work) ---------- */
 
 .disclaimer {
 	display: flex;
@@ -436,8 +420,6 @@ main {
 	display: none;
 }
 
-/* ---------- Video embeds (past work) ---------- */
-
 .video-frame {
 	position: relative;
 	flex: 0 0 42%;
@@ -455,7 +437,6 @@ main {
 	border: 0;
 }
 
-/* Smaller, denser grid for lower-priority video demos. */
 .video-compact-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -490,8 +471,6 @@ main {
 	color: var(--muted);
 	font-size: 0.85rem;
 }
-
-/* ---------- Skill cards ---------- */
 
 .skill-grid {
 	display: grid;
@@ -545,8 +524,6 @@ main {
 	margin-bottom: 0;
 }
 
-/* ---------- Open source project cards ---------- */
-
 .project-card {
 	display: flex;
 	gap: 1.75rem;
@@ -568,7 +545,6 @@ main {
 	display: block;
 }
 
-/* Still-empty media slot (no image yet) — dashed placeholder look. */
 .project-media[aria-hidden="true"] {
 	border: 1px dashed var(--border);
 	background: repeating-linear-gradient(
@@ -614,8 +590,6 @@ main {
 	flex-wrap: wrap;
 }
 
-/* Tag / chip — used for project tags, video roles, and job tags. A visible pill
-   (background + stroke) so it reads as a tag, not plain text. */
 .tag {
 	display: inline-flex;
 	align-items: center;
@@ -634,8 +608,6 @@ main {
 	margin: 0 0 1.25rem;
 	max-width: 65ch;
 }
-
-/* ---------- Job cards ("Last Jobs" section) ---------- */
 
 .section-title {
 	font-size: clamp(1.3rem, 3vw, 1.8rem);
@@ -707,8 +679,6 @@ main {
 	color: #d7dbe0;
 }
 
-/* ---------- Footer nav ("Now look:") ---------- */
-
 .now-look {
 	text-align: center;
 	margin-top: 4rem;
@@ -731,8 +701,6 @@ footer.site-footer {
 	font-size: 0.85rem;
 	padding: 2.5rem 1.5rem;
 }
-
-/* ---------- Responsive ---------- */
 
 @media (max-width: 760px) {
 	.topbar {

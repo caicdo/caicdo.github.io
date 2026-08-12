@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-	// ---------- Animated stat counters ----------
 	const counters = document.querySelectorAll("[data-target]");
 	const formatNumber = (value) => Math.round(value).toLocaleString("en-US");
 
@@ -11,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		const step = (now) => {
 			const progress = Math.min((now - start) / duration, 1);
-			const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+			const eased = 1 - Math.pow(1 - progress, 3);
 			el.textContent = formatNumber(target * eased) + suffix;
 			if (progress < 1) requestAnimationFrame(step);
 		};
@@ -34,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		counters.forEach((el) => observer.observe(el));
 	}
 
-	// ---------- Discord contact button: copies the handle to clipboard ----------
 	document.querySelectorAll(".discord-btn").forEach((btn) => {
 		const toast = btn.querySelector(".toast");
 		btn.addEventListener("click", async () => {
@@ -56,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 
-	// ---------- Dismissible "skills" disclaimer banner (past-work.html) ----------
 	const disclaimer = document.querySelector("[data-disclaimer]");
 	if (disclaimer) {
 		const key = "pw-disclaimer-dismissed";
