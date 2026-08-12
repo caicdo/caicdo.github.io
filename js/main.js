@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			try {
 				await navigator.clipboard.writeText(handle);
 				if (toast) {
-					toast.textContent = `Copied ${handle} — add me on Discord`;
+					toast.textContent = `Copied ${handle}, add me on Discord`;
 					toast.classList.add("show");
 					setTimeout(() => toast.classList.remove("show"), 2200);
 				}
