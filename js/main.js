@@ -54,6 +54,26 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 
+	const filterButtons = document.querySelectorAll("[data-filter]");
+	const videoGrid = document.querySelector("[data-video-grid]");
+	if (filterButtons.length && videoGrid) {
+		const cards = videoGrid.querySelectorAll("[data-category]");
+		const applyFilter = (filter) => {
+			cards.forEach((card) => {
+				card.hidden = card.dataset.category !== filter;
+			});
+			filterButtons.forEach((btn) => {
+				const isActive = btn.dataset.filter === filter;
+				btn.classList.toggle("is-active", isActive);
+				btn.setAttribute("aria-pressed", String(isActive));
+			});
+		};
+		filterButtons.forEach((btn) => {
+			btn.addEventListener("click", () => applyFilter(btn.dataset.filter));
+		});
+		applyFilter(filterButtons[0].dataset.filter);
+	}
+
 	const disclaimer = document.querySelector("[data-disclaimer]");
 	if (disclaimer) {
 		const key = "pw-disclaimer-dismissed";

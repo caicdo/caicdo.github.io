@@ -115,70 +115,44 @@
 		</div>
 	</section>
 
-	<div class="job-list">
-		<article class="project-card">
+	<div class="filter-row" role="tablist" aria-label="Video categories">
+		<button class="filter-btn" type="button" data-filter="vehicles">Vehicles</button>
+		<button class="filter-btn" type="button" data-filter="game-systems">Game Systems</button>
+		<button class="filter-btn" type="button" data-filter="ui-ux">UI/UX</button>
+	</div>
+
+	<div class="video-compact-grid" data-video-grid>
+		<article class="video-compact-card" data-category="vehicles">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/4kiujIvah9w" title="Car Chassis" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
-			<div class="project-body">
+			<div class="video-compact-meta">
 				<h3>Car Chassis</h3>
-				<p class="project-desc">Built a chassis for this game starting from the A-Chassis system, doing fuel, drifting, and suspension tuning, plus feel adjustments to the physics directly in the main code.</p>
+				<p>Built a chassis for this game starting from the A-Chassis system, doing fuel, drifting, and suspension tuning, plus feel adjustments to the physics directly in the main code.</p>
 			</div>
 		</article>
 
-		<article class="project-card">
+		<article class="video-compact-card" data-category="vehicles">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/U4mpatuD_hY" title="Motorbike Chassis" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
-			<div class="project-body">
+			<div class="video-compact-meta">
 				<h3>Motorbike Chassis</h3>
-				<p class="project-desc">The two-wheeled counterpart to the chassis. Same A-Chassis based approach, but with balancing and suspension rework, along with special adjustments to the physics.</p>
+				<p>The two-wheeled counterpart to the chassis. Same A-Chassis based approach, but with balancing and suspension rework, along with special adjustments to the physics.</p>
 			</div>
 		</article>
 
-		<article class="project-card">
+		<article class="video-compact-card" data-category="vehicles">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/N8muzUoo5Ys" title="Car Dealership" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
-			<div class="project-body">
+			<div class="video-compact-meta">
 				<h3>Car Dealership</h3>
-				<p class="project-desc">A full dealership economy, with browsing, buying, selling, and spawning vehicles, backed by a modular fuel system.</p>
+				<p>A full dealership economy, with browsing, buying, selling, and spawning vehicles, backed by a modular fuel system.</p>
 			</div>
 		</article>
 
-		<article class="project-card">
-			<div class="video-frame">
-				<iframe src="https://www.youtube.com/embed/QK6tyOn498U" title="UI Framework Example" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
-			<div class="project-body">
-				<h3>UI Framework Example</h3>
-				<p class="project-desc">
-					UITransitions running in an actual shipped game, the same framework listed in my open source
-					code, shown here doing real work instead of a demo scene.
-				</p>
-				<a class="job-link" href="open-source.html">Go to open source code →</a>
-			</div>
-		</article>
-
-		<article class="project-card">
-			<div class="video-frame">
-				<iframe src="https://www.youtube.com/embed/3FgHvufSLbM" title="Job Framework Example" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
-			<div class="project-body">
-				<h3>Job Framework Example</h3>
-				<p class="project-desc">
-					JobEngine running in an actual shipped game, the same framework listed in my open source
-					code, shown here doing real work instead of a demo scene.
-				</p>
-				<a class="job-link" href="open-source.html">Go to open source code →</a>
-			</div>
-		</article>
-	</div>
-
-	<h3 class="subsection-title">More Systems</h3>
-
-	<div class="video-compact-grid">
-		<article class="video-compact-card">
+		<article class="video-compact-card" data-category="vehicles">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/7topEPmKbDc" title="Bus Chassis and Job System" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
@@ -188,7 +162,29 @@
 			</div>
 		</article>
 
-		<article class="video-compact-card">
+		<article class="video-compact-card" data-category="ui-ux">
+			<div class="video-frame">
+				<iframe src="https://www.youtube.com/embed/QK6tyOn498U" title="UI Framework Example" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div class="video-compact-meta">
+				<h3>UI Framework Example</h3>
+				<p>UITransitions running in an actual shipped game, the same framework listed in my open source code, shown here doing real work instead of a demo scene.</p>
+				<a class="job-link" href="open-source.html">Go to open source code →</a>
+			</div>
+		</article>
+
+		<article class="video-compact-card" data-category="game-systems">
+			<div class="video-frame">
+				<iframe src="https://www.youtube.com/embed/3FgHvufSLbM" title="Job Framework Example" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div class="video-compact-meta">
+				<h3>Job Framework Example</h3>
+				<p>JobEngine running in an actual shipped game, the same framework listed in my open source code, shown here doing real work instead of a demo scene.</p>
+				<a class="job-link" href="open-source.html">Go to open source code →</a>
+			</div>
+		</article>
+
+		<article class="video-compact-card" data-category="game-systems">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/UGg2M_2_SWQ" title="ATM Robbery" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
@@ -198,7 +194,7 @@
 			</div>
 		</article>
 
-		<article class="video-compact-card">
+		<article class="video-compact-card" data-category="game-systems">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/QeyX4ZWOiBg" title="Store Robbery" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
@@ -208,7 +204,7 @@
 			</div>
 		</article>
 
-		<article class="video-compact-card">
+		<article class="video-compact-card" data-category="game-systems">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/FtdCF8GJftU" title="Quest System" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
@@ -218,7 +214,7 @@
 			</div>
 		</article>
 
-		<article class="video-compact-card">
+		<article class="video-compact-card" data-category="game-systems">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/yk125_kfnQE" title="Tutorial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
@@ -228,7 +224,7 @@
 			</div>
 		</article>
 
-		<article class="video-compact-card">
+		<article class="video-compact-card" data-category="game-systems">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/iuQWuD67LA0" title="Modular Shop System" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
@@ -238,7 +234,7 @@
 			</div>
 		</article>
 
-		<article class="video-compact-card">
+		<article class="video-compact-card" data-category="game-systems">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/raUpDA0O4lY" title="Lockpicking System" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
@@ -248,7 +244,7 @@
 			</div>
 		</article>
 
-		<article class="video-compact-card">
+		<article class="video-compact-card" data-category="game-systems">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/ysN8Z3UXjmQ" title="Auto Gear System" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
@@ -258,7 +254,7 @@
 			</div>
 		</article>
 
-		<article class="video-compact-card">
+		<article class="video-compact-card" data-category="ui-ux">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/lRsYwJXvZSE" title="Graphic Settings" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
@@ -268,7 +264,7 @@
 			</div>
 		</article>
 
-		<article class="video-compact-card">
+		<article class="video-compact-card" data-category="game-systems">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/L8MRb8BDSy8" title="Rank Changer (JavaScript)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
@@ -278,7 +274,7 @@
 			</div>
 		</article>
 
-		<article class="video-compact-card">
+		<article class="video-compact-card" data-category="ui-ux">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/0EcpPELr9kU" title="iPhone for Roleplay" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
@@ -288,7 +284,7 @@
 			</div>
 		</article>
 
-		<article class="video-compact-card">
+		<article class="video-compact-card" data-category="game-systems">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/PeZOTy1O3Cw" title="Mod System" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
@@ -298,7 +294,7 @@
 			</div>
 		</article>
 
-		<article class="video-compact-card">
+		<article class="video-compact-card" data-category="game-systems">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/UOgTF0d2jdc" title="Gang System" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
@@ -308,7 +304,7 @@
 			</div>
 		</article>
 
-		<article class="video-compact-card">
+		<article class="video-compact-card" data-category="ui-ux">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/p4WkuTiBzKs" title="Character Customization" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
@@ -318,7 +314,7 @@
 			</div>
 		</article>
 
-		<article class="video-compact-card">
+		<article class="video-compact-card" data-category="game-systems">
 			<div class="video-frame">
 				<iframe src="https://www.youtube.com/embed/x0P0075jOwk" title="NPCs (AI)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
